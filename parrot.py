@@ -14,7 +14,7 @@ def party_if_accepted(i):
     """Takes number of parrot iterations as integer"""
     accept = False
     while not accept:
-        if input(f"{rainbowtext.text('Do you want to party?')}\033[0;37;40m (\033[0;32;40my\033[0;37;40m/\033[0;31;40mn\033[0;37;40m)\n(Some console data might get lost)").lower() == "y":
+        if input(f"{rainbowtext.text('Do you want to celebrate?')}\033[0;37;40m (\033[0;32;40my\033[0;37;40m/\033[0;31;40mn\033[0;37;40m)\n(Some console data might get lost)").lower() == "y":
             accept = True
     for _ in range(i):
         for frame in frames:
