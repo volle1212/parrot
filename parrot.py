@@ -3,7 +3,6 @@ from os import listdir
 from os.path import isfile, join
 import time
 import rainbowtext
-from itertools import cycle
 
 clear = lambda: os.system('cls')
 frames = [f for f in listdir("C:/Users/vilmer.folcke/Documents/python/projects/celebration/frames") if isfile(join("C:/Users/vilmer.folcke/Documents/python/projects/celebration/frames", f))]
