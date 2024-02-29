@@ -20,8 +20,12 @@ all_colors = {
 
 colors = [all_colors.get('red'), all_colors.get('red'), all_colors.get('yellow'), all_colors.get('green'), all_colors.get('green'), all_colors.get('red'), all_colors.get('cyan'), all_colors.get('blue'), all_colors.get('blue'),  all_colors.get('magenta'), all_colors.get('white')]
 
-def party_if_accepted(i):
-    """Takes number of parrot iterations as integer"""
+def party_if_accepted(i, path_to_files=""):
+    """Takes number of parrot iterations as integer 
+    and path to the frames which has to be named 0.txt, 1.txt etc with a max of 9.txt"""
+    if path_to_files == "":
+        raise Exception("Missing path to files (path_to_files, takes string)")
+
     accept = False
     while not accept:
         print("")
@@ -31,7 +35,7 @@ def party_if_accepted(i):
         for frame in frames:
             color = colors[int(frame.replace(".txt", ""))]
             print(color)
-            with open(str("C:/Users/vilmer.folcke/Documents/python/projects/celebration/frames/"+frame)) as f: # The with keyword automatically closes the file when you are done
+            with open(str(path_to_files+frame)) as f: # The with keyword automatically closes the file when you are done
                 clear()
                 print(f"{color}{f.read()}")
 
@@ -45,4 +49,4 @@ def party_if_accepted(i):
     print("\033[0;37;40m")
     clear()
 
-party_if_accepted(5)
+party_if_accepted(5, "C:/Users/vilmer.folcke/Documents/python/projects/celebration/frames/")
