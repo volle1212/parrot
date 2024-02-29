@@ -24,6 +24,7 @@ def party_if_accepted(i):
     """Takes number of parrot iterations as integer"""
     accept = False
     while not accept:
+        print("")
         if input('Do you want to celebrate? (y/n)\n(console logs will get lost)').lower() == "y":
             accept = True
     for _ in range(i):
@@ -41,6 +42,7 @@ def party_if_accepted(i):
             delay = max(0, desired_interval - elapsed_time % desired_interval)
             
             time.sleep(delay)
+    print("\033[0;37;40m")
     clear()
 
 party_if_accepted(5)
